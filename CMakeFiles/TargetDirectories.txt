@@ -1,0 +1,3 @@
+/home/pranay/Desktop/nn_test/CMakeFiles/rebuild_cache.dir
+/home/pranay/Desktop/nn_test/CMakeFiles/edit_cache.dir
+/home/pranay/Desktop/nn_test/CMakeFiles/main.dir
