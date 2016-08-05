@@ -6,9 +6,10 @@
 using namespace std;
 using namespace cv;
 
-int
-main(int argc, char** argv)
+
+int main(int argc, char** argv)
 {
+    char c;
     if (argc != 3)
     {
         cout << " Usage: displayimage ImageToLoadAndDisplay" << endl;
@@ -18,19 +19,19 @@ main(int argc, char** argv)
     Mat image;
     image = imread(argv[1], CV_LOAD_IMAGE_COLOR); // Read the file
 
-    int ***allvals = new int**[256];
+    char ***allvals = new char**[256];
     for (int i = 0; i < 256; i++)
     {
-        allvals[i] = new int*[256];
+        allvals[i] = new char*[256];
 
         for (int j = 0; j < 256; j++)
         {
-            allvals[i][j] = new int[256];
+            allvals[i][j] = new char[256];
         }
     }
 
-    fstream f;
-    f.open(argv[2], ios::in);
+    ifstream f;
+    f.open(argv[2]);
 
     if (f)
     {
@@ -42,7 +43,8 @@ main(int argc, char** argv)
                 {
                     if (!f.eof())
                     {
-                        f >> allvals[i][j][k];
+                        f >> c;
+                        allvals[i][j][k] = c - '0';
                     }
                 }
             }
